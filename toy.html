@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function EmptyBoxes(boxes) {
+            let count = 0;
+            const result = [];
+            for (let i = 0; i < boxes.length; i++) {
+                if (boxes[i] !== 0) {
+                    result.push(boxes[i]);
+                } else {
+                    count++;
+                }
+            }
+            for (let i = 0; i < count; i++) {
+                result.push(0);
+            }
+            return { result, count };
+        }
+        const input = prompt("Enter the boxes in aaray:");
+        const boxes = input.split(",").map(Number);
+        const output = EmptyBoxes(boxes);
+        console.log("Rearranged Boxes:", output.result);
+        console.log("Count of Empty Boxes:", output.count);
+    </script>
+</body>
+</html>
